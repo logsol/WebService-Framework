@@ -2,10 +2,10 @@
 require_once 'lib/Service.php';
 require_once 'lib/Service/Core.php';
 
-$command = $_GET['cmd'];
-$mode = $_GET['mode'];
-$auth = $_SESSION['auth'];
-$params = $_POST;
+$command = $argv[1];
+$mode = $argv[2];
+$auth = $argv[3];
+$params = array();
 
 $service = new Service($mode);
 

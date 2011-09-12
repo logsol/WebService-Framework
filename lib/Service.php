@@ -14,11 +14,6 @@ class Service
 
     public function authenticate($auth)
     {
-        if(!$auth)
-        {
-            $messenger = new Service_Messenger('Not authenticated');
-            $this->_output(false, $messenger);
-        }
         return (bool) $auth;
     }
 
@@ -75,7 +70,7 @@ class Service
         switch($this->_mode)
         {
             case 'print':
-                $output = print_r($returnObject, true);
+               $output = print_r($returnObject, true);
                 break;
             case 'php':
                 $output = serialize($returnObject);
