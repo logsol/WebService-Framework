@@ -1,3 +1,10 @@
-a little framework for creating a data webservice, greatly extensible and brilliantly usable as an ajax interface.
+A little framework for creating a data webservice, greatly extensible and brilliantly usable as an ajax interface.
+
+Create a custom Service_Core class and all public methods will be available as webservice methods. 
+Any values, that these methods return will be cleanly formatted, depending on the mode.
+
+
+Example web call: service.php?cmd=query&mode=json
 
 Example console call: php -f cli.php query print 1 | more
+
