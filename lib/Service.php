@@ -1,7 +1,7 @@
 <?php
-require_once 'lib/Service/Exception.php';
-require_once 'lib/Service/Messenger.php';
-require_once 'lib/Service/Interface.php';
+require_once 'Service/Exception.php';
+require_once 'Service/Messenger.php';
+require_once 'Service/Core/Interface.php';
 
 class Service
 {
@@ -24,9 +24,9 @@ class Service
         try {
 
             $reflection = new ReflectionClass($coreClass);
-            $interface = 'Service_Interface';
+            $interface = 'Service_Core_Interface';
 
-            if(!$reflection->implementsInterface($interface))
+            if($reflection->implementsInterface($interface))
             {
                 if($reflection->hasMethod($command))
                 {
