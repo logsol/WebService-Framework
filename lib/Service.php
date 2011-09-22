@@ -31,7 +31,7 @@ class Service
                 if($reflection->hasMethod($command))
                 {
                     $method = new ReflectionMethod($coreClass, $command);
-                    if($method->isPublic() && $command != '__construct')
+                    if($method->isPublic() && !$method->isConstructor())
                     {
                         $core = new $coreClass($messenger);
                         $result = $core->$command($parameters);
